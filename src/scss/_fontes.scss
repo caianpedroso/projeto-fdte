@@ -1,0 +1,48 @@
+$fonteLato: "Lato",sans-serif;
+$fontePermanent: 'Permanent Marker', cursive;
+
+// tipografia
+
+@mixin fonteHeaderIcon(){
+    font-family: $fonteLato;
+	font-size: 14px;
+	color: $colorPrimaria;
+	margin: 0;
+}
+
+@mixin fonteInput(){
+	font-family: $fonteLato;
+	color: $colorFonteCinzaClaro;
+	font-size:  14px;
+}
+
+@mixin fonteMenu(){
+	font-family: $fonteLato;
+	color: #fff;
+	font-size:  11px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+@mixin fonteMenuBanner(){
+    font-family: $fonteLato;
+	color: $colorFonteCinzaClaro;
+	font-size:  14px;
+	text-transform: uppercase;
+}
+
+@mixin fonteMenuBannerImg{
+	font-family: $fontePermanent;
+	font-size: 35px;
+	color:#fff;
+}
+
+@mixin fonteTituloBody(){
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 20px;
+	color:  $colorFonteCinzaClaro;
+}
+
+

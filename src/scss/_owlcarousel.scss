@@ -1,0 +1,18 @@
+.owl-nav{
+	position: absolute;
+	top: calc(50% - 100px);
+	width: 100%;
+	@include flexbox();
+	@include align-items(center);	
+
+}
+.owl-prev{
+    position: absolute;
+	left: 0;
+	font-size: 50px; 
+}
+.owl-next{
+	position: absolute;
+	right: 0;
+	font-size: 50px;
+}

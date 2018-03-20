@@ -1,0 +1,1125 @@
+@import 'cores';
+@import 'fontes';
+@import 'reset';
+@import 'flexBox';
+@import 'transition';
+@import 'owlcarousel';
+
+@mixin alinhamentoCentro(){
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(center);
+}   
+@mixin alinhamentoLeft(){ 
+	@include flexbox();
+	@include align-items(center);
+}
+@mixin alinhamentoRight(){
+	@include flexbox();
+	@include justify-content(flex-end);
+	@include align-items(center);	
+}
+
+@mixin alinhamentoColumn(){
+	@include flexbox();
+	@include align-items(center);
+	@include flex-direction(column);
+}
+
+@mixin buttonPadrao{
+	border:none; 
+	color:#fff;
+	border-radius: 5px;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 8px 15px;
+	font-weight: 700;
+	background-color: $colorButtonCompra;
+	cursor: pointer;
+
+}
+
+@mixin buttonEspiar{
+	border: none;
+	color: #fff;
+	text-transform: uppercase;
+	width: 100px;
+	height: 26px;
+	border-radius: 2px;
+	font-weight: 700;
+	background-color: $colorButtonEspiar;
+	@include alinhamentoCentro(); 
+}
+
+@mixin tagLancamento{
+	text-transform: uppercase;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 4px;
+	font-size: 10px;
+	font-weight: 700;
+	background-color: $colorTargetBorda;
+	color: $colorTargetFonte;
+	border: solid 2px $colorTargetFonte;
+	width: 70px;
+}
+
+
+body{
+	font-family: $fonteLato;
+}
+
+// Inicio Header
+header{
+	width: 100%;
+	// height: 250px;
+	background: url(../img/header-background.jpg); 
+	background-size: cover;
+     
+    .divHeaderIconsTop{
+    	width: calc(100% - 30px);
+    	height: 40px;
+    	padding: 0 15px;
+
+    	.topLeft{
+         	width: 40%;
+         	height: 100%;         	
+         	float: left;
+         	@include flexbox();
+	        @include align-items(flex-end);
+
+        	.atendimentoCentral,
+        	.atendimentoTel{
+        		margin-right: 30px;
+        		@include alinhamentoCentro();
+        		img{
+        			height: 20px;
+        			width: 20px;
+        			margin-right: 10px;
+        		}
+        		p{
+        			@include fonteHeaderIcon();
+        		}
+        	}
+    	}
+    	.topRight{
+    		width: 40%;
+    		height: 100%;
+    		float: right;
+         	@include flexbox();
+	        @include align-items(flex-end);
+    	    @include justify-content(flex-end);
+
+    		.pedidos,
+    		.desejos{
+    			margin-left: 30px;
+    			@include alinhamentoCentro();
+    			img{
+    				height: 20px;
+    				width:25px;
+    				margin-right: 10px;
+
+    				p{
+    					@include fonteHeaderIcon();
+    				}
+    			}
+    		}
+    	}
+    }
+	// logo
+	.img-logo{
+		@include alinhamentoCentro();
+		width: 100%; 
+
+	    img{
+	    	width: 245px;
+	    }
+	}
+	.divHeaderBusca{
+		height: 68px;
+		width: 100%;
+	
+        .buscaSocial{
+         	width: 20%;
+         	height: 100%;
+         	float: left;
+        	@include alinhamentoLeft();
+
+         	.socialFace,
+         	.socialInsta{
+         		margin: 0px 10px;
+         		width: 35px;
+         		height: 35px;
+         	} 
+        }
+
+		.buscaInput{
+			height: 100%;
+			width: 60%; 
+			float: left;
+			@include alinhamentoCentro();
+            
+
+			.input{
+				@include fonteInput();
+				box-shadow: 0 0 0 transparent;
+				height: 48px; 
+				width: 80%;
+				line-height: 42px;
+	            outline: 0px;
+	            border:0;
+	            padding: 0 10px;
+	            border-top-left-radius: 5px;
+	            border-bottom-left-radius: 5px;
+			} 
+			.inputButton{
+				width: 20%;
+				height: 100%;
+				@include alinhamentoLeft();
+				
+				button{
+				height: 48px;
+				width: 48px;
+				border:none;
+				background-color: #fff;
+				border-top-right-radius:5px;
+				border-bottom-right-radius: 5px;
+
+					img{
+						width: 100%;
+					}
+                }
+			}  
+		}
+
+		.buscaIcon{
+			height: 100%;
+			width: 20%;
+			float: right;
+			@include alinhamentoRight();
+
+			.iconConta,
+			.iconItem{
+				margin: 0 20px;
+				@include alinhamentoColumn();
+				img{
+					height: 35px;
+					width: 35px;
+				}
+				p{
+					@include fonteHeaderIcon();
+				}
+			}
+		}	
+	}
+}
+// Fim Header
+
+// Inicio nav
+nav{
+	width: 100%;
+	height: 95px;
+	background-color: $colorPrimaria;
+	@include alinhamentoCentro();
+	
+	ul{
+		width: 90%;
+		height: 100%;
+		@include alinhamentoCentro();
+
+        li{
+        	width: 10%;
+        	height: calc(100% - 20px);
+        	margin: 0 5px;
+        	float: left;
+        	padding-top: 6px;
+        	
+        	
+        	&:nth-child(1){
+        		background-color: $colorhalloween; 
+        	}
+        	&:nth-child(2){
+        		background-color: $colorTemaFesta; 
+        	}
+        	&:nth-child(3){
+        		background-color: $colorFantasia; 
+        	}
+        	&:nth-child(4){
+        		background-color: $colorDescartaveis; 
+        	}
+        	&:nth-child(5){
+        		background-color: $colorArtigosFesta; 
+        	}
+        	&:nth-child(6){
+        		background-color: $colorBaloesBexigas; 
+        	}
+        	&:nth-child(7){
+        		background-color: $colorDoces; 
+        	}
+        	&:nth-child(8){
+        		background-color: $colorLembrancinhas; 
+        	}
+        	&:nth-child(9){
+        		background-color: $colorTodasCategorias; 
+        	}
+
+        	&:hover{
+        		background-color: #fff;
+        	}
+          
+
+        	a{
+        	 	text-decoration: none;
+        		@include alinhamentoColumn();
+        		@include transition(all, 1000ms, linear);
+                
+                &:hover{ 
+                    color: #000000;         
+                	@include transition(all, 150ms, linear);
+                }
+                
+
+                &:active{
+                	@include transition(all, 50ms, linear);
+                }
+
+		        img{
+		        	height: 40px;
+		           
+		            &:nth-child(2){
+		            	display: none;
+		            }
+		        }
+
+		        p{
+		        	@include fonteMenu();
+		        	margin-top: 7px;
+
+		        	&:hover{
+                	color: #000; 
+                    }
+
+		        }
+		    }	
+		    section{
+		        position:absolute;
+		        z-index: 2; 
+	            display:none;	
+		    	background-color: #fff;
+		    	width: 100%;
+		        margin-top: 17px;
+	            left:0;
+	            height: 500px;
+                box-shadow:  0 10px 10px -1px rgba(0, 0, 0, 0.2);
+                
+                div{
+                    float:left;
+                    height: calc(100% - 80px);
+                    padding: 40px 0;
+                    @include flexbox();
+                    @include align-items(center);
+                    @include justify-content(space-around);
+                    @include flex-direction(column); 
+                    @include fonteMenuBanner();
+
+                	&:nth-child(1){
+		        		width: 25%; 
+		        	}
+		        	&:nth-child(2){ 
+		        		width: 25%; 
+		        	}
+		        	&:nth-child(3){ 
+		        		width: calc(50% - 20px);
+		        	}
+		        
+		        	img{
+		        		width: 100%;
+		        	}
+		        	h5{
+		        	    position: absolute; 
+		        		@include fonteMenuBannerImg();
+		        	}
+                }
+            }
+		    
+		    &:hover section{
+               display:block;
+            }
+            &:hover a img:nth-child(1){
+                display: none;
+            }
+            &:hover a img:nth-child(2){
+                display: block;
+            }  
+            &:nth-child(1):hover a p{
+            	color: $colorhalloween;
+            }
+            &:nth-child(2):hover a p{
+            	color: $colorTemaFesta;
+            }
+            &:nth-child(3):hover a p{
+            	color: $colorFantasia;
+            }
+            &:nth-child(4):hover a p{
+            	color: $colorDescartaveis;
+            }
+            &:nth-child(5):hover a p{
+            	color: $colorArtigosFesta;
+            }
+            &:nth-child(6):hover a p{
+            	color: $colorBaloesBexigas;
+            }
+            &:nth-child(7):hover a p{
+            	color: $colorDoces;
+            }
+            &:nth-child(8):hover a p{
+            	color: $colorLembrancinhas;
+            }
+            &:nth-child(9):hover a p{
+            	color: $colorTodasCategorias;
+            }
+
+        }
+	}
+}
+// fim nav
+
+// inicio banner top 
+.bannerTop{
+	width: 100%;
+	height: 90px; 
+	background-color: #fff;
+
+	div{
+		width: 25%;
+		height: 100%;
+		float: left;
+		@include alinhamentoCentro();
+		@include flex-direction(column); 
+        color: $colorFonteCinzaClaro;
+		
+		section{
+        	@include alinhamentoCentro();
+        	
+        	img{
+            	height: 45px;
+            	width: 45px;
+            	float: left;
+            	margin-right: 10px;
+        	}
+        	aside{
+        		h2{
+                	font-size: 33px;
+                	font-weight: 900;
+                	text-transform: uppercase;
+        		}
+
+        		h3{
+					font-size: 21px;
+					font-weight: 900;
+					letter-spacing: 2px;
+                    text-transform: uppercase;
+        		}
+        		h4{
+        		 	font-size: 15px;
+        		 	letter-spacing: 1px;
+        		 	text-transform: uppercase;
+        		}
+        	}      
+		}
+	}
+}
+// fim banner top
+
+// inicio banner slider
+.sliderBanner{
+	padding: 20px 15px;
+    border-radius: 5px;
+
+    article{
+
+    	.conteudoSlider{ 
+
+    		div{
+				position: absolute;
+				top: 0;
+				width: 40%;
+				height: 100%;
+				right: 6%;
+				background-color: rgba(255, 255, 255, 0.59);
+				transform: rotate(-4deg);
+				@include alinhamentoCentro();
+                @include flex-direction(column);
+
+                h1{
+                	transform: rotate(4deg);
+                	font-size: 36px;
+                	line-height: 60px;
+                	width: 80%;
+                	text-transform: uppercase;
+                	font-family: $fontePermanent;
+                	color: $colorFonteCinzaEscura;
+                }
+
+                p{
+                	transform: rotate(4deg);
+                	font-size: 25px;
+                	line-height: 35px;
+                	text-transform: uppercase;
+                	width: 80%;
+                	color: $colorFonteCinzaClaro;
+                }
+
+                button{
+                	margin-top: 25px;
+                	transform: rotate(4deg);
+                	@include buttonPadrao(); 
+                }	
+    		}
+    	}
+    }
+}
+// fim banner slider
+
+// inicio destaques
+.destaques{
+	padding: 0 15px;
+	margin: 0 0 20px 0;
+	
+	article{
+    	width: 25%;
+    	height: 230px;
+    	float: left;
+    	@include flexbox();
+    	@include justify-content(center);
+
+    	div{
+    		width: 220px;
+    		height: 220px;
+            background-size: cover;
+    		border-radius: 50%;
+            @include flexbox();
+            @include align-items(flex-end);
+
+            
+    		p{
+    		    text-align: center;
+			    background-color: rgba(255, 255, 255, 0.73);
+			    width: 100%;
+    			margin-bottom: 35px;
+    			font-size: 15px;
+                line-height: 24px;
+                text-transform: uppercase;
+                font-weight: 700;
+    			color: $colorFonteCinzaClaro;
+    		}
+    	}
+    	&:nth-child(1) div{
+    		background: url("../img/mini-banners/fantasias.jpg") top center ;	
+        }
+        &:nth-child(2) div{
+    		background: url("../img/mini-banners/festa-junina.jpg") top center ;	
+        }
+        &:nth-child(3) div{
+    		background: url("../img/mini-banners/doces.jpg") top center ;	
+        }
+        &:nth-child(4) div{
+    		background: url("../img/mini-banners/descartaveis.jpg") top center ;	
+        }
+	}
+}
+// fim destaque
+
+.conteudo{
+	padding: 0 15px;
+	
+	.menuLateral{
+		width: 25%;
+		float: left;
+		margin-top: 20px;
+
+		h1{
+			border-bottom: solid 2px $colorButtonCompra;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 28px;
+			width: 90%;
+			margin-bottom: 8px;
+		}
+
+		p{
+			line-height: 20px;
+			width: 90%;
+
+		}
+
+		h2{
+			text-align: right;
+			width: 90%;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			@include alinhamentoRight();
+
+			span{
+            	margin-right: 4px;
+
+				img{
+				border-radius: 50%;	
+				height: 10px;
+				width: 10px;
+				padding: 3px;
+				background-color: $colorPrimaria;
+				}
+			}
+		}
+		div{
+			margin-top: 25px;
+			img{
+				width: 90%;
+			}	
+		}	
+	}
+
+	.conteudoProd{
+		width: 75%;
+		float: right;
+		margin-top: 20px;  
+	}
+
+	.parceiros{
+		h1{
+			@include fonteTituloBody();
+		}
+		.parceirosImg{
+			width: 90%;
+			margin-right: 5%;
+			margin-left: 5%;
+
+			.owl-nav{
+    			bottom:40%;
+	    		
+	    		.owl-prev{
+                	margin-left: -5%;
+                	bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+	    		.owl-next{
+	    			margin-right: -5%;
+	    			bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+    		}
+
+		}
+	}
+
+
+	.lancamentos{
+		height: 660px;
+		h1{
+	    	@include fonteTituloBody();
+		}
+		.header{
+			position: absolute;
+			top: 0;
+			@include tagLancamento();			 
+		}
+		.itemLancamento{
+			width: 90%;
+			margin-right: 5%;
+			margin-left: 5%;
+            
+
+
+			.owl-nav{
+    			top:40%;
+	    		
+	    		.owl-prev{
+                	margin-left: -5%;
+                	bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+	    		.owl-next{
+	    			margin-right: -5%;
+	    			bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+    		}
+
+		}
+
+		.img{
+			margin-bottom: 10px;
+
+			.espiar{
+				display: none;
+				position: absolute;
+				width: 100%;
+				top: 200px;
+
+				button{
+                	@include buttonEspiar();
+
+                	img{
+                		height: 12px;
+                		width: 12px;
+                		margin-right: 5px;
+                	}
+				}
+			}
+		}
+		.colores{
+    		width: 80%;
+    		margin: 0 10%;
+
+
+    		.owl-nav{
+    			bottom:6px;
+	    		
+	    		.owl-prev{
+                	margin-left: -10%;
+                	bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+	    		.owl-next{
+	    			margin-right: -10%;
+	    			bottom: 5px;
+                	font-size: 40px;
+                	color:  $colorFonteCinzaClaro;
+	    		}
+    		}
+			article{
+				height: 25px;
+				width: 25px;
+			}
+			.ar1{
+		    	background-color:$colorProd1;
+			}
+			.ar2{
+				background-color:$colorProd2;
+			}
+			.ar3{
+				background-color:$colorProd3;
+			}
+			.ar4{
+				background-color:$colorProd4;
+			}
+			.ar5{
+				background-color:$colorProd5;
+			}
+			.ar6{
+				background-color:$colorProd2;
+			}
+		}
+		.detalhes{
+			h1{
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: 900;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.desconto{
+				color: $colorFonteCinzaClaro;
+				text-align: center;
+				text-decoration: line-through;
+				font-size: 13px;
+			}
+			.peco{
+				text-align: center;
+				font-weight: 700;
+			}
+			.boleto{
+				text-align: center;
+				font-weight: 700;
+				span{
+					font-weight: 900;
+				}
+			}
+			.parcelas{
+				text-align: center;
+				color: $colorDesconto;
+                font-weight: 700;
+				span{
+					font-weight: 900;
+				}
+			}
+			.quantidade{
+				text-align: center;
+				padding-top: 10px;
+				input{
+					width: 15px;
+					height: 15px;
+					border-radius: 3px;
+					box-shadow: none;
+					border: solid 1px $colorFonteCinzaClaro; 
+                    margin-left: 7px;
+				}
+			}
+			.lancamento{
+				margin-top: 10px;
+				@include alinhamentoCentro();
+				h3{
+				@include tagLancamento();
+			}
+			}
+		}
+
+		.btn-comprar{
+			width:100%;
+			margin-top: 10px;
+			display: none;
+
+			button{
+				@include buttonPadrao();	
+			}
+		}
+        
+        article:hover{
+        	box-shadow: 0 0 60px  rgba(0, 0, 0, 0.1);
+        }
+		article:hover .img .espiar{
+			@include alinhamentoCentro();
+		}
+		article:hover .btn-comprar{
+			@include alinhamentoCentro();
+		}
+	}
+
+	.bannerCentro{
+		width: 100%;
+		height: 210px;
+		.papel{
+			width: 49.5%;
+			float: left;
+			height: 100%;
+			background: url("../img/banners-centro/banner1.jpg") center center;
+		    background-size: cover;
+		    overflow: hidden;
+
+		    div{
+				margin-top: 0;
+				width: 82%;
+				height: 120%;
+				right: 6%;
+				margin-left: -4%;
+				background-color: rgba(255, 255, 255, 0.59);
+				transform: rotate(4deg);
+				@include alinhamentoCentro();
+                @include flex-direction(column);
+
+                h1{
+                	transform: rotate(-4deg);
+                	font-size: 24px;
+                	line-height: 40px;
+                	width: 80%;
+                	text-transform: uppercase;
+                	font-family: $fontePermanent;
+                	color: $colorFonteCinzaEscura;
+                }
+
+                p{
+                	transform: rotate(-4deg);
+                	font-size: 18px;
+                	line-height: 25px;
+                	text-transform: uppercase;
+                	width: 80%;
+                	font-weight: 700;
+                	color: $colorFonteCinzaEscura;
+                }
+                button{
+                	margin-top: 25px;
+                	transform: rotate(-4deg);
+                	@include buttonPadrao(); 
+                }
+            }
+		}
+		.baloes{
+			width: 49.5%;
+			float: right;
+			height: 100%;
+			background: url("../img/banners-centro/banner2.jpg") center center;
+		    background-size: cover;
+		    overflow: hidden;
+
+		    div{
+			    // transform: skew(-15,0); 
+				margin-top: 0;
+				width: 82%;
+				height: 120%;
+				margin-left: 20%;
+				background-color: rgba(255, 255, 255, 0.59);
+				transform: rotate(-4deg);
+				@include alinhamentoCentro();
+                @include flex-direction(column);
+
+                h1{
+                	transform: rotate(4deg);
+                	font-size: 24px;
+                	line-height: 40px;
+                	width: 80%;
+                	text-transform: uppercase;
+                	font-family: $fontePermanent;
+                	color: $colorFonteCinzaEscura;
+                }
+
+                p{
+                	transform: rotate(4deg);
+                	font-size: 18px;
+                	line-height: 25px;
+                	text-transform: uppercase;
+                	width: 80%;
+                	font-weight: 700;
+                	color: $colorFonteCinzaEscura;
+                }
+                button{
+                	margin-top: 25px;
+                	transform: rotate(4deg);
+                	@include buttonPadrao(); 
+                }
+            }    
+		}
+	}
+}
+
+.brindes{
+	background: url("../img/footer/banner.jpg") top center;
+	background-size: cover;
+	height: 250px;
+	width: 100%;
+	margin: 20px 0; 
+	clear: both;
+	@include alinhamentoCentro();
+	div{
+		margin-top: 0;
+		height: 100%;
+		@include alinhamentoCentro();
+        @include flex-direction(column);
+
+        img{
+        	height: 60px;
+        	width: 60px;
+        }
+
+        h1{
+        	font-size: 24px;
+        	line-height: 40px;
+        	text-align: center;
+        	text-transform: uppercase;
+        	font-family: $fontePermanent;
+        	color: $colorFonteCinzaEscura;
+        }
+
+        p{
+        	font-size: 18px;
+        	line-height: 25px;
+        	text-transform: uppercase;
+        	width: 80%;
+        	font-weight: 700;
+        	color: $colorFonteCinzaEscura;
+        }
+    }
+}
+
+footer{
+	background-color: $colorFooterMain;
+	.input{
+		height: 70px;
+		padding: 0 5%;
+		background-color: $colorFooterEmail;
+	    @include alinhamentoLeft();
+
+		img{
+			height: 40px;
+		}
+		div{
+			margin-left: 15px;
+			margin-right: 35px;
+			p:nth-child(1){
+				text-transform: uppercase;
+				color: #fff;
+				font-weight: 700;
+			}
+			p:nth-child(2){
+                color: #fff;
+                font-weight: 700;
+			}
+		}
+		input{
+			border:none;
+            line-height: 32px;
+            border-radius: 5px;
+            margin: 0 10px;
+            width: 25%;
+            padding: 0 10px;
+		}
+		button{
+			border:none;
+			line-height: 32px;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 700;
+			border-radius: 5px;
+			padding: 0px 30px;
+			background-color: $colorFooterMain;
+		}
+	}
+
+	.main{
+		min-height: 340px;
+		@include flexbox();
+		padding: 30px 10px;
+
+		.img-logo{
+			width: 14%;
+
+			img{
+				width: 80%;
+			}
+		}
+		.ajuda{
+			width: 16%;
+			margin-left: 20px;
+
+			ul{
+				li{
+					p{
+						color:#fff;
+						font-size: 19px;
+						line-height: 45px;
+				    }
+					&:nth-child(1) p{
+	                	font-weight: 900;
+					}
+				}
+			}
+		}
+		.inst{
+			width: 20%;
+			margin-left: 40px;
+			ul{
+				li{
+					p{
+						color:#fff;
+						font-size: 19px;
+						line-height: 45px;
+				    }
+					&:nth-child(1) p{
+	                	font-weight: 900;
+					}
+				}
+			}
+		}
+		.atend{
+			width: 20%;
+			margin-right: 5%;
+
+			ul{
+				li{
+					@include alinhamentoLeft();
+					margin:24px 0;
+					span{
+						img{
+							height: 20px;
+							margin-right: 10px;
+						}
+					}
+					p{
+						color:#fff;
+						font-size: 19px;
+
+					}
+					&:nth-child(1){
+						margin-top: 5px;
+                        font-weight: 900;
+					}
+				}
+			}
+		}
+		.face{
+			width: 20%;
+			.frame{
+				img{
+					width: 100%;
+				}
+			}
+			.logos{
+				@include flexbox();
+				padding: 5% 8%;
+				img{
+					width: 15%;
+					height: 100%;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+
+	.pagamentos{
+		 height: 110px;
+		 border-bottom: solid 1px $colorFonteCinzaClaro;
+		 background-color: #fff;
+		 @include flexbox();
+		.pag-logos{
+			width: 45%;
+			padding: 35px 5%;
+			@include flexbox();
+			p{
+				color: $colorFonteCinzaEscura;
+				font-weight: 900;
+				font-size: 18px;
+				margin-right: 20px;
+				padding-top: 15px;
+			}
+			img{
+				height: 100%;
+				margin-right: 10px;
+			}
+		}
+		.pag-certificados{
+			width: 45%;
+			padding: 25px 5%;
+			@include flexbox();
+			p{
+				color: $colorFonteCinzaEscura;
+				font-weight: 900;
+				font-size: 18px;
+				margin-right: 20px;
+				padding-top: 15px;
+			}
+			img{
+				height: 100%;
+				margin-right: 10px; 
+			}
+		}
+	}
+	.copy{
+		height: 70px;
+		background-color: #fff;
+		@include flexbox();
+		padding: 10px;
+		.conteido{
+			@include flexbox();
+        	.texto{
+        		width: 80%;
+
+        		p{
+
+        		}
+        	}
+        	.logo{
+        		width: 20%;
+        		@include alinhamentoRight();
+         		img{
+        			height: 100%;
+        		}
+
+        	}
+		}
+	}
+}
